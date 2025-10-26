@@ -3,172 +3,195 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Halloween Sale – 20% Off All Accounts | Traders Launch</title>
-  <meta name="description" content="Use code PUMPKIN20. Prices start at $39. Ends Halloween night. Daily payouts, one-step evaluation, no activation fees." />
+  <title>Traders Launch — Halloween Sale: 20% Off All Accounts</title>
+  <meta name="description" content="Use code PUMPKIN20. Prices start at $39. Ends Halloween night. Daily payouts, one-step evaluation, no activation fees.">
+  <link rel="icon" href="logo.png">
   <style>
     :root{
-      --bg:#0b0d12; --panel:#111521; --ink:#e7ecff; --muted:#9aa3b2;
-      --accent:#ff7a00; --accent-2:#8fff00; --card:#0f1420; --stroke:#1c2233;
-      --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35)
+      /* Traders Launch brandy palette */
+      --bg:#0b0d12;          /* deep navy */
+      --surface:#111521;     /* card/panel */
+      --surface-2:#0f1420;   /* softer panel */
+      --ink:#e7ecff;         /* primary text */
+      --muted:#9aa3b2;       /* secondary text */
+      --stroke:#1c2233;      /* borders */
+
+      --accent:#3ea8ff;      /* TL electric blue */
+      --accent-2:#8fff00;    /* TL acid green */
+      --promo:#ff7a00;       /* seasonal urgency (Halloween) */
+
+      --radius:16px;
+      --shadow:0 12px 32px rgba(0,0,0,.35);
+      --font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
-    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .wrap{max-width:1100px;margin:0 auto;padding:28px}
-    .hero{padding:56px 0;text-align:center}
-    .badge{display:inline-block;padding:6px 10px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted);font-size:12px;background:linear-gradient(180deg,rgba(255,122,0,.12),rgba(255,122,0,.03))}
+
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Top brand bar */
+    .brandbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .brand-left{display:flex;align-items:center;gap:12px}
+    .logo{height:36px;width:auto;display:block;filter:drop-shadow(0 0 8px rgba(0,0,0,.4))}
+    .brand-name{font-weight:800;letter-spacing:.2px}
+    .brand-cta{display:none}
+    @media (min-width:860px){ .brand-cta{display:block} }
+
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:12px;background:var(--accent);
+      color:#061018;font-weight:800;box-shadow:var(--shadow)
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+    .btn-outline{background:#1d2333;color:#e9eeff;border:1px solid var(--stroke)}
+    .btn-gradient{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#05120e}
+
+    /* Hero */
+    .hero{padding:28px 0 10px;text-align:center}
+    .badge{display:inline-block;padding:6px 12px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted);
+      background:linear-gradient(180deg,rgba(62,168,255,.10),rgba(62,168,255,.03));font-size:12px}
     h1{font-size:40px;line-height:1.1;margin:14px 0 10px}
     .sub{color:var(--muted);font-size:18px}
     .sub strong{color:#fff}
-    .cta{margin-top:18px}
-    .btn{display:inline-block;padding:14px 22px;border-radius:12px;background:var(--accent);color:#0a0a0a;font-weight:700;text-decoration:none;box-shadow:var(--shadow)}
-    .btn:hover{filter:brightness(1.05)}
-    .ends{margin-top:10px;color:var(--muted);font-size:13px}
-    .trust{margin:22px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .pill{padding:8px 12px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted);font-size:13px;background:var(--card)}
-    /* pricing */
-    .pricing{margin:40px 0 10px}
+    .cta{margin-top:16px}
+    .trust{margin:18px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .pill{padding:8px 12px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted);font-size:13px;background:var(--surface-2)}
+
+    /* Sections */
+    .section-title{font-size:22px;margin:34px 0 14px}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card{background:var(--surface);border:1px solid var(--stroke);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 8px;font-size:18px}
     .price{display:flex;align-items:baseline;gap:10px;margin:10px 0 16px}
     .was{color:var(--muted);text-decoration:line-through}
-    .now{font-size:34px;font-weight:800}
+    .now{font-size:34px;font-weight:900}
     .per{color:var(--muted);font-size:14px}
-    .choose{margin-top:10px}
-    .choose .btn{width:100%;text-align:center;background:#1d2333;color:#e9eeff;border:1px solid var(--stroke)}
-    .choose .btn:hover{border-color:#2c3650}
+    .card .btn{width:100%;text-align:center;background:#1d2333;color:#e9eeff;border:1px solid var(--stroke)}
+    .card .btn:hover{border-color:#2c3650}
     .meta{margin-top:8px;color:var(--muted);font-size:12px}
-    .bullets{margin:34px 0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-    .b{background:var(--card);border:1px solid var(--stroke);border-radius:12px;padding:12px;color:#cfd6ea;text-align:center;font-size:13px}
-    .section-title{font-size:22px;margin:34px 0 14px}
-    .proof{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .quote{background:var(--panel);border:1px solid var(--stroke);border-radius:var(--radius);padding:18px;color:#dfe6ff}
-    .urgency{margin:30px 0;text-align:center;background:linear-gradient(180deg,rgba(255,122,0,.08),transparent);border:1px solid var(--stroke);border-radius:16px;padding:18px}
-    .timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:22px;color:#fff;margin-top:6px}
-    .faq{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
-    .q{background:var(--panel);border:1px solid var(--stroke);border-radius:12px;padding:16px}
-    .footer-cta{position:sticky;bottom:0;background:rgba(10,12,18,.8);backdrop-filter:blur(8px);border-top:1px solid var(--stroke);padding:14px 0;margin-top:28px}
-    .footer-cta .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
-    .start-from{color:#fff;font-weight:700}
+
+    .columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .quote{background:var(--surface);border:1px solid var(--stroke);border-radius:var(--radius);padding:18px;color:#dfe6ff}
+
+    .urgency{margin:28px 0;text-align:center;background:linear-gradient(180deg,rgba(255,122,0,.08),transparent);
+      border:1px solid var(--stroke);border-radius:16px;padding:18px}
+    .timer{font-variant-numeric:tabular-nums;font-weight:900;font-size:22px}
+
+    .footer-cta{position:sticky;bottom:0;background:rgba(8,10,16,.75);backdrop-filter:blur(8px);
+      border-top:1px solid var(--stroke);padding:14px 0;margin-top:28px}
+    .notice{color:var(--muted)}
+
+    /* Promo accent underline for “Ends Halloween Night” */
+    .promo-underline{box-shadow:inset 0 -10px 0 rgba(255,122,0,.18);padding:0 6px;border-radius:6px}
+
+    /* Responsive */
     @media (max-width:960px){
       .grid{grid-template-columns:1fr}
-      .bullets{grid-template-columns:1fr 1fr}
-      .proof{grid-template-columns:1fr}
-      .faq{grid-template-columns:1fr}
+      .columns{grid-template-columns:1fr}
       h1{font-size:32px}
     }
   </style>
 </head>
 <body>
-  <header class="hero wrap">
-    <span class="badge">20% OFF • Daily Payouts • One-Step Eval</span>
-    <h1>Trade Bigger This Halloween — 20% Off All Accounts</h1>
-    <p class="sub">Use code <strong>PUMPKIN20</strong>. <span class="start-from">Prices start at $39</span>. <br/>Offer <strong>ends Halloween night</strong> (Oct 31 @ 11:59 PM EST).</p>
-    <div class="cta"><a href="#pricing" class="btn">Get 20% Off →</a></div>
-    <div class="ends">Auto-applies at checkout • No activation fees • Transparent rules</div>
+  <!-- Brand Bar -->
+  <div class="container brandbar">
+    <div class="brand-left">
+      <img src="logo.png" alt="Traders Launch" class="logo">
+      <div class="brand-name">Traders Launch</div>
+    </div>
+    <div class="brand-cta">
+      <a href="#pricing" class="btn-outline">View Pricing →</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="container hero">
+    <span class="badge">Fast Funding • Daily Payouts • One-Step Eval</span>
+    <h1>Trade Bigger — <span class="promo-underline">20% Off All Accounts</span></h1>
+    <p class="sub">Use code <strong>PUMPKIN20</strong>. <strong>Prices start at $39</strong>. Offer <strong>ends Halloween night</strong> (Oct 31 @ 11:59 PM EST).</p>
+    <div class="cta">
+      <a href="#pricing" class="btn btn-gradient">Get 20% Off →</a>
+    </div>
     <div class="trust">
       <span class="pill">Daily payouts</span>
       <span class="pill">EOD drawdown (locks at start)</span>
-      <span class="pill">One-step evaluation</span>
-      <span class="pill">No payout caps</span>
+      <span class="pill">No activation fees</span>
+      <span class="pill">Transparent rules</span>
       <span class="pill">Up to $900K funding</span>
     </div>
   </header>
 
-  <main class="wrap">
-    <section id="pricing" class="pricing">
-      <h2 class="section-title">Pick Your Account</h2>
-      <div class="grid">
-        <!-- 100K -->
-        <article class="card">
-          <h3>100K Futures • 55% Split</h3>
-          <div class="price">
-            <span class="was">$49</span>
-            <span class="now">$39.20</span><span class="per">/month</span>
-          </div>
-          <div class="choose">
-            <a class="btn" href="https://app.traderslaunch.com/auth/purchasing-signup/?utm_source=meta&utm_medium=cpc&utm_campaign=pumpkin20&utm_content=100k&code=PUMPKIN20">Pick 100K →</a>
-          </div>
-          <div class="meta">Coupon <strong>PUMPKIN20</strong> applied at checkout.</div>
-        </article>
+  <!-- Pricing -->
+  <main class="container">
+    <h2 id="pricing" class="section-title">Pick Your Account</h2>
+    <div class="grid">
+      <!-- 100K -->
+      <article class="card">
+        <h3>100K Futures • 55% Split</h3>
+        <div class="price">
+          <span class="was">$49</span>
+          <span class="now">$39.20</span><span class="per">/month</span>
+        </div>
+        <a class="btn" href="https://app.traderslaunch.com/auth/purchasing-signup/?utm_source=meta&utm_medium=cpc&utm_campaign=pumpkin20&utm_content=100k&code=PUMPKIN20">Pick 100K →</a>
+        <div class="meta">Coupon <strong>PUMPKIN20</strong> applies at checkout.</div>
+      </article>
 
-        <!-- 200K -->
-        <article class="card">
-          <h3>200K Futures • 55% Split</h3>
-          <div class="price">
-            <span class="was">$74</span>
-            <span class="now">$59.20</span><span class="per">/month</span>
-          </div>
-          <div class="choose">
-            <a class="btn" href="https://app.traderslaunch.com/auth/purchasing-signup/?utm_source=meta&utm_medium=cpc&utm_campaign=pumpkin20&utm_content=200k&code=PUMPKIN20">Pick 200K →</a>
-          </div>
-          <div class="meta">Coupon <strong>PUMPKIN20</strong> applied at checkout.</div>
-        </article>
+      <!-- 200K -->
+      <article class="card">
+        <h3>200K Futures • 55% Split</h3>
+        <div class="price">
+          <span class="was">$74</span>
+          <span class="now">$59.20</span><span class="per">/month</span>
+        </div>
+        <a class="btn" href="https://app.traderslaunch.com/auth/purchasing-signup/?utm_source=meta&utm_medium=cpc&utm_campaign=pumpkin20&utm_content=200k&code=PUMPKIN20">Pick 200K →</a>
+        <div class="meta">Coupon <strong>PUMPKIN20</strong> applies at checkout.</div>
+      </article>
 
-        <!-- 300K -->
-        <article class="card">
-          <h3>300K Futures • 55% Split</h3>
-          <div class="price">
-            <span class="was">$139</span>
-            <span class="now">$111.20</span><span class="per">/month</span>
-          </div>
-          <div class="choose">
-            <a class="btn" href="https://app.traderslaunch.com/auth/purchasing-signup/?utm_source=meta&utm_medium=cpc&utm_campaign=pumpkin20&utm_content=300k&code=PUMPKIN20">Pick 300K →</a>
-          </div>
-          <div class="meta">Coupon <strong>PUMPKIN20</strong> applied at checkout.</div>
-        </article>
-      </div>
-    </section>
+      <!-- 300K -->
+      <article class="card">
+        <h3>300K Futures • 55% Split</h3>
+        <div class="price">
+          <span class="was">$139</span>
+          <span class="now">$111.20</span><span class="per">/month</span>
+        </div>
+        <a class="btn" href="https://app.traderslaunch.com/auth/purchasing-signup/?utm_source=meta&utm_medium=cpc&utm_campaign=pumpkin20&utm_content=300k&code=PUMPKIN20">Pick 300K →</a>
+        <div class="meta">Coupon <strong>PUMPKIN20</strong> applies at checkout.</div>
+      </article>
+    </div>
 
-    <section class="bullets">
-      <div class="b">Daily payouts — withdraw every 24h</div>
-      <div class="b">EOD drawdown (locks at starting balance)</div>
-      <div class="b">No activation fees or payout caps</div>
-      <div class="b">Transparent rules, real futures markets</div>
-      <div class="b">Fast funding up to $900,000</div>
-    </section>
-
-    <section class="proof">
+    <!-- Social Proof -->
+    <div class="columns" style="margin-top:28px">
       <blockquote class="quote">“$30K in payouts in two weeks. Fastest firm I’ve used.” — Ramie</blockquote>
       <blockquote class="quote">“Passed and withdrew within days. No gimmicks.” — Nick</blockquote>
-    </section>
+    </div>
 
+    <!-- Urgency -->
     <section class="urgency">
       <div>🕛 <strong>Ends Halloween Night</strong> — October 31 @ 11:59 PM EST</div>
-      <div id="countdown" class="timer">Loading timer…</div>
-      <div style="margin-top:10px">
-        <a href="#pricing" class="btn">Claim My 20% Off →</a>
-      </div>
+      <div id="countdown" class="timer">Loading…</div>
+      <div style="margin-top:10px"><a href="#pricing" class="btn btn-gradient">Claim My 20% Off →</a></div>
     </section>
   </main>
 
+  <!-- Sticky Footer CTA -->
   <footer class="footer-cta">
-    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div>🎃 Use code <strong>PUMPKIN20</strong>. Prices from <strong>$39</strong>. <span style="color:var(--muted)">Ends Halloween night.</span></div>
-      <a href="#pricing" class="btn">Get 20% Off →</a>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>🎃 Use code <strong>PUMPKIN20</strong>. Prices from <strong>$39</strong>. <span class="notice">Ends Halloween night.</span></div>
+      <a href="#pricing" class="btn btn-gradient">Get 20% Off →</a>
     </div>
   </footer>
 
   <script>
-    // ---- Simple countdown to Halloween night (Oct 31, 23:59:59 Eastern) ----
+    // Countdown to Oct 31, 23:59:59 Eastern (approx)
     (function(){
-      var year = new Date().getFullYear();      // current year
-      // Approximate EDT (UTC-4) for Oct 31
-      var targetUTC = Date.UTC(year, 9, 31, 23+4, 59, 59); // month index 9 = October
-      var target = new Date(targetUTC);
-      var el = document.getElementById('countdown');
-
-      function tick(){
-        var now = new Date();
-        var diff = target - now;
-        if(diff <= 0){ el.textContent = "Offer expired"; return; }
-        var s = Math.floor(diff/1000);
-        var d = Math.floor(s/86400);
-        var h = Math.floor((s%86400)/3600);
-        var m = Math.floor((s%3600)/60);
-        var sec = s%60;
-        el.textContent = d+"d : "+String(h).padStart(2,'0')+"h : "+String(m).padStart(2,'0')+"m : "+String(sec).padStart(2,'0')+"s";
-      }
-      tick(); setInterval(tick, 1000);
+      var y=new Date().getFullYear();
+      var target=new Date(Date.UTC(y,9,31,27,59,59)); // Oct=9, EST≈UTC+4
+      var el=document.getElementById('countdown');
+      function t(){var d=target-new Date(); if(d<=0){el.textContent="Offer expired";return}
+        var s=Math.floor(d/1000),dd=Math.floor(s/86400),hh=Math.floor((s%86400)/3600),mm=Math.floor((s%3600)/60),ss=s%60;
+        el.textContent=`${dd}d : ${String(hh).padStart(2,'0')}h : ${String(mm).padStart(2,'0')}m : ${String(ss).padStart(2,'0')}s`; }
+      t(); setInterval(t,1000);
     })();
   </script>
-</body
+</body>
+</html>
